@@ -75,9 +75,42 @@ header p { color: var(--text-dim); }
 .subdir-card.open .subdir-body { display: block; }
 .file-count { font-size: 0.75rem; color: var(--text-dim); background: var(--card); padding: 2px 8px; border-radius: 10px; }
 .truncated-note { color: #f59e0b; font-size: 0.8rem; font-style: italic; padding: 4px 0; }
+
+.fleet-nav {
+  position: fixed; top: 16px; right: 16px; z-index: 9999;
+  display: flex; gap: 8px;
+}
+.fleet-nav a {
+  background: rgba(99,102,241,0.15);
+  border: 1px solid rgba(99,102,241,0.3);
+  color: #a5b4fc;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: 'Inter', system-ui, sans-serif;
+  transition: all 0.2s;
+  backdrop-filter: blur(8px);
+}
+.fleet-nav a:hover {
+  background: rgba(99,102,241,0.3);
+  color: #c7d2fe;
+}
+.fleet-nav a.active {
+  background: rgba(99,102,241,0.4);
+  color: #fff;
+}
+
 </style>
 </head>
 <body>
+<div class="fleet-nav">
+  <a href="https://lofp34.github.io/openclaw-fleet-dashboard/" title="Hub central">🏠 Hub</a>
+  <a href="https://lofp34.github.io/openclaw-audit-dashboard/">📊 Audit</a>
+  <a href="https://lofp34.github.io/openclaw-phase2-cards/">🐾 Agents</a>
+  <a href="https://lofp34.github.io/openclaw-skills-cards/" class="active">🧩 Skills</a>
+</div>
 <script>window.onerror = function(msg, url, line, col, err) {
   var d = document.createElement('div');
   d.style.cssText = 'position:fixed;top:0;left:0;right:0;background:red;color:white;padding:16px;font-family:monospace;font-size:14px;z-index:9999;white-space:pre-wrap;';
